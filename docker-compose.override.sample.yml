@@ -1,0 +1,9 @@
+version: "3.2"
+services:
+    koa-typescript-boilerplate:
+        build: .
+        ports:
+            - 5001:80
+        environment:
+        volumes:
+            - ./:/var/www

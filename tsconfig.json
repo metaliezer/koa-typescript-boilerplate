@@ -1,0 +1,25 @@
+{
+    "compilerOptions": {
+        "moduleResolution": "node",
+        "alwaysStrict": true,
+        "emitDecoratorMetadata": true,
+        "experimentalDecorators": true,
+        "sourceMap": true,
+        "outDir": "./dist",
+        "baseUrl": ".",
+        "resolveJsonModule": true,
+        "lib": ["es2018"],
+        "module": "commonjs",
+        "target": "es2018",
+        "esModuleInterop": true,
+        "skipLibCheck": true,
+        "forceConsistentCasingInFileNames": true,
+        "pretty": true,
+        "removeComments": true,
+        "noFallthroughCasesInSwitch": true,
+        "allowUnreachableCode": true,
+        "typeRoots": ["./src/types"],
+        "paths": {}
+    },
+    "include": ["src"]
+}

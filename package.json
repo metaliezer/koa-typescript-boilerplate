@@ -1,0 +1,48 @@
+{
+    "name": "koa-typescript-boilerplate",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "start": "npm run serve NODE_ENV=production",
+        "serve": "node --harmony --max-http-header-size=262144 dist/index.js",
+        "build": "tsc",
+        "watch:node": "nodemon --harmony dist/index.js",
+        "watch:ts": "tsc -w",
+        "server:watch": "concurrently -k -p \"[{name}]\" -n \"TypeScript,Node\" -c \"yellow.bold,cyan.bold,green.bold\" \"npm run watch:ts\" \"npm run watch:node\"",
+        "eslint": "eslint"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/metaliezer/koa-typescript-boilerplate.git"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/metaliezer/koa-typescript-boilerplate/issues"
+    },
+    "homepage": "https://github.com/metaliezer/koa-typescript-boilerplate#readme",
+    "devDependencies": {
+        "@types/koa": "^2.13.1",
+        "@types/koa-bodyparser": "^4.3.0",
+        "@types/koa-json": "^2.0.18",
+        "@types/koa-logger": "^3.1.1",
+        "@types/koa-router": "^7.4.1",
+        "@types/module-alias": "^2.0.0",
+        "@types/nconf": "^0.10.0",
+        "@types/node": "^14.14.35",
+        "concurrently": "^6.0.0",
+        "module-alias": "^2.2.2",
+        "nconf": "^0.11.2",
+        "nodemon": "^2.0.7",
+        "typescript": "^4.2.3"
+    },
+    "dependencies": {
+        "koa": "^2.13.1",
+        "koa-bodyparser": "^4.3.0",
+        "koa-json": "^2.0.2",
+        "koa-logger": "^3.2.1",
+        "koa-router": "^10.0.0"
+    }
+}
