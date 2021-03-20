@@ -1,6 +1,10 @@
-import { BookRepository } from "@domain/book/book-repository";
+import { Book } from "@domain/book/book";
+import { BookRepository } from "@domain/book/repository";
 
-export async function FindBook(id: number, bookRepository: BookRepository) {
+export async function FindBook(
+    id: number,
+    bookRepository: BookRepository
+): Promise<Book> {
     try {
         const book = await bookRepository.findBook(id);
         if (!book) {

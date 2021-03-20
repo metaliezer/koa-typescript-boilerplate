@@ -1,9 +1,9 @@
-import { AddUser } from "@application/use-cases/user/add-user";
-import { FindUser } from "@application/use-cases/user/find-user";
-import { RemoveUser } from "@application/use-cases/user/remove-user";
-import { UpdateUser } from "@application/use-cases/user/update-user";
+import { AddUser } from "@application/use-cases/user/add";
+import { FindUser } from "@application/use-cases/user/take";
+import { RemoveUser } from "@application/use-cases/user/remove";
+import { UpdateUser } from "@application/use-cases/user/update";
 import { User } from "@domain/user/user";
-import { UserRepositoryMysql } from "@infrastructure/repository/user-repository-mysql";
+import { UserRepositoryMysql } from "@infrastructure/repository/user";
 import { Context } from "koa";
 
 interface IGetUserContext extends Context {

@@ -1,9 +1,9 @@
-import { AddBook } from "@application/use-cases/book/add-book";
-import { FindBook } from "@application/use-cases/book/find-book";
-import { RemoveBook } from "@application/use-cases/book/remove-book";
-import { UpdateBook } from "@application/use-cases/book/update-book";
+import { AddBook } from "@application/use-cases/book/add";
+import { FindBook } from "@application/use-cases/book/find";
+import { RemoveBook } from "@application/use-cases/book/remove";
+import { UpdateBook } from "@application/use-cases/book/update";
 import { Book } from "@domain/book/book";
-import { BookRepositoryMysql } from "@infrastructure/repository/book-repository-mysql";
+import { BookRepositoryMysql } from "@infrastructure/repository/book";
 import { Context } from "koa";
 
 interface IGetBookContext extends Context {
@@ -33,9 +33,13 @@ export class BookController {
                 bookId,
                 new BookRepositoryMysql()
             );
-            ctx.body = removeBook;
+            ctx.type = "json";
+            ctx.body = { remove: removeBook };
         } catch (e) {
-            ctx.throw(404, e);
+            const er = e as Error;
+            ctx.type = "json";
+            ctx.status = 404;
+            ctx.body = { error: true, message: er.message };
         }
     };
     addBook = async (ctx: Context) => {
@@ -45,6 +49,8 @@ export class BookController {
                 newBookData,
                 new BookRepositoryMysql()
             );
+            ctx.type = "json";
+            ctx.status = 201;
             ctx.body = newBook;
         } catch (e) {
             const er = e as Error;
