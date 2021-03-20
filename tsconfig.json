@@ -19,7 +19,12 @@
         "noFallthroughCasesInSwitch": true,
         "allowUnreachableCode": true,
         "typeRoots": ["./src/types"],
-        "paths": {}
+        "paths": {
+            "@application/*": ["./src/application/*"],
+            "@domain/*": ["./src/domain/*"],
+            "@infrastructure/*": ["./src/infrastructure/*"],
+            "@interfaces/*": ["./src/models/interfaces/*"]
+        }
     },
     "include": ["src"]
 }
