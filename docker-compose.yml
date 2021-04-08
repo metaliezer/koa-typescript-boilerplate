@@ -4,6 +4,5 @@ services:
         build: .
         ports:
             - 5001:80
-        environment:
         volumes:
             - ./:/var/www
